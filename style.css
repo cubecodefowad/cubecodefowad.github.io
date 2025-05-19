@@ -1,41 +1,51 @@
-/* Reset and base styling */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f0f4f8;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
   color: #333;
-  line-height: 1.6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.container {
-  background: white;
-  padding: 2rem 3rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-h1 {
-  color: #2c3e50;
-  margin-bottom: 1rem;
+header {
+  background: #1a1a1a;
+  color: white;
+  padding: 60px 20px;
 }
 
-p {
-  font-size: 1.1rem;
-  color: #555;
+header h1 {
+  margin: 0;
+  font-size: 2.8em;
 }
 
-@media (max-width: 600px) {
-  .container {
-    padding: 1.5rem;
-  }
+header p {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #ccc;
+}
+
+.links a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #4dd0e1;
+  font-weight: bold;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+section h2 {
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.project {
+  margin-bottom: 20px;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #777;
+  padding-bottom: 30px;
 }

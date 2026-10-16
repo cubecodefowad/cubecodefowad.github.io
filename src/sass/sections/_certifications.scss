@@ -1,0 +1,140 @@
+#certifications {
+  // Soft wash out of the white projects section into a tinted band, so the
+  // cards have a surface to sit on before the contact gradient's diagonal cut.
+  background-image: linear-gradient(
+    180deg,
+    $white-color 0%,
+    #eef2f2 55%,
+    #eef2f2 100%
+  );
+  color: $dark-blue-text;
+  // The projects wrapper already runs out 12rem, so the heading only needs a
+  // little extra breathing room.
+  padding: 2rem 0 14rem;
+
+  @include respond(tab-land) {
+    padding: 1rem 0 8rem;
+  }
+
+  @include respond(phone) {
+    padding: 1rem 0 6rem;
+  }
+}
+
+// Cards wrap 3-up on desktop and 2-up on tablets, so the vertical gap belongs
+// on the row: the cards keep height: 100% to stay equal without overflowing
+// their column.
+.cert-grid {
+  row-gap: 3.2rem;
+}
+
+// Carries the reveal and the stretched height, so ScrollReveal never animates
+// transform on the card itself (its hover transition would fight the reveal).
+.cert-card-wrap {
+  height: 100%;
+}
+
+.cert-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 3.2rem 2.8rem;
+  text-align: left;
+  background-color: $white-color;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  transition: transform var(--dur-med) var(--ease-smooth),
+    box-shadow var(--dur-med) var(--ease-smooth);
+
+  // Gradient hairline along the top edge, echoing the CTA button's border.
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.3rem;
+    background-image: linear-gradient(90deg, $primary-color 0%, $band-end 100%);
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.8rem;
+    height: 4.8rem;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    line-height: 1;
+    color: $white-color;
+    background-image: linear-gradient(135deg, $primary-color 0%, $band-end 100%);
+    border-radius: 50%;
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--dur-med) var(--ease-smooth);
+  }
+
+  &:hover &__icon {
+    transform: translateY(-2px) scale(1.04);
+  }
+
+  &__name {
+    margin-bottom: 0.6rem;
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  // #5a5a61 holds 6.7:1 on the white card.
+  &__meta {
+    margin-bottom: 1.4rem;
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $primary-color;
+  }
+
+  // Credential link. margin-top: auto pushes it to the bottom so cards with
+  // unequal copy still line up, and the underline sweeps in like the CTA fill.
+  &__link {
+    position: relative;
+    align-self: flex-start;
+    margin-top: auto;
+    padding-bottom: 0.4rem;
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $primary-color;
+    transition: color var(--dur-fast) var(--ease-smooth);
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background-color: currentColor;
+      transition: width var(--dur-med) var(--ease-smooth);
+    }
+
+    &:hover {
+      color: $dark-blue-text;
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    @include focus-ring($primary-color);
+  }
+}

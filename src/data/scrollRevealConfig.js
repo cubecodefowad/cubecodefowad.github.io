@@ -1,7 +1,7 @@
 export const defaultProps = {
   easing: "cubic-bezier(0.5, 0, 0, 1)",
-  distance: "30px",
-  duration: 1000,
+  distance: "20px",
+  duration: 450,
   desktop: true,
   mobile: true,
 };
@@ -10,7 +10,7 @@ export const targetElements = [
   {
     element: ".section-title",
     animation: {
-      delay: 300,
+      delay: 60,
       distance: "0px",
       origin: "bottom",
     },
@@ -18,49 +18,57 @@ export const targetElements = [
   {
     element: ".hero-title",
     animation: {
-      delay: 500,
+      delay: 80,
       origin: window.innerWidth > 768 ? "left" : "bottom",
     },
   },
   {
     element: ".hero-cta",
     animation: {
-      delay: 1000,
+      delay: 160,
       origin: window.innerWidth > 768 ? "left" : "bottom",
     },
   },
   {
     element: ".about-wrapper__image",
     animation: {
-      delay: 600,
+      delay: 80,
       origin: "bottom",
     },
   },
   {
     element: ".about-wrapper__info",
     animation: {
-      delay: 1000,
+      delay: 140,
       origin: window.innerWidth > 768 ? "left" : "bottom",
     },
   },
   {
     element: ".project-wrapper__text",
     animation: {
-      delay: 500,
+      delay: 60,
       origin: window.innerWidth > 768 ? "left" : "bottom",
     },
   },
   {
     element: ".project-wrapper__image",
     animation: {
-      delay: 1000,
+      delay: 120,
       origin: window.innerWidth > 768 ? "right" : "bottom",
+    },
+  },
+  {
+    element: ".cert-card-wrap",
+    animation: {
+      delay: 60,
+      interval: 90,
+      origin: "bottom",
     },
   },
   {
     element: ".contact-wrapper",
     animation: {
-      delay: 800,
+      delay: 100,
       origin: "bottom",
     },
   },

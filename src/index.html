@@ -1,54 +1,65 @@
-<!--
-  Hello!
-  -
-  Simplefolio is a clean and responsive portfolio template for Developers!
-  Created by Jacobo Martinez.
-  -
-  Github Repo: https://github.com/cobiwave/simplefolio/
-  Readme: https://github.com/cobiwave/simplefolio/README.md
-  -
-  For business & inquires, contact me -> jacobojavier98@gmail.com
--->
 <!DOCTYPE html>
 <html lang="en" class="sr">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
 
-    <!-- Todo: put here your site title -->
-    <title>[Your name here] | Developer</title>
-    <!-- Todo: add some coding keywords below - e.g: (javascript, yourusername, etc) -->
-    <meta name="keywords" content="[username], [name], skill" />
-    <!-- Todo: improve your SEO by adding a small description of you -->
-    <meta name="description" content="[Your name here] | Developer" />
+        <title>Muhammad Fowad | Aspiring Web Developer</title>
+    
+    <meta name="keywords" content="cubecodefowad, Muhammad Fowad, python, html, css, react, typescript" />
 
-    <link
+    <meta
+      name="description"
+      content="Muhammad Fowad - AI and software developer from Al Khobar, Saudi Arabia. I build web apps with Python, Flask, React and TypeScript, and founded the Build-a-thon online hackathon."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Muhammad Fowad | AI &amp; Software Developer" />
+    <meta
+      property="og:description"
+      content="AI and software developer building web apps with Python, Flask, React and TypeScript. Founder of Build-a-thon, an online hackathon with 245 participants."
+    />
+
+        <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Declaring an empty icon stops the browser falling back to /favicon.ico
+         (which this site does not have) and showing a default tab icon. -->
+    <link
+      rel="icon"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
     />
     <link rel="stylesheet" href="styles.scss" />
     <script
       defer
       src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"
     ></script>
-
-    <!-- Todo: remove the below script once you finish your portfolio -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <noscript>
+      <style>
+        /* Without JS the .sr rule would hide every .load-hidden section. */
+        .sr .load-hidden {
+          visibility: visible !important;
+          opacity: 1 !important;
+        }
+      </style>
+    </noscript>
   </head>
 
-  <!-- Todo: read the following HTML Todos to create your stunning portfolio website -->
+
   <body>
     <div id="top"></div>
 
-    <!-- **** Hero Section **** -->
+
     <section id="hero" class="jumbotron">
       <div class="container">
         <h1 class="hero-title load-hidden">
-          Hi, my name is <span class="text-color-main">Your Name</span>
+          Hi, my name is <span class="text-color-main">Muhammad Fowad</span>
           <br />
-          I'm the Unknown Developer.
+          I'm an AI & Software Developer.
+          <br />
+          I build things at the intersection of AI, software, and community.
         </h1>
         <p class="hero-cta load-hidden">
           <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about"
@@ -67,32 +78,30 @@
           <div class="col-md-6 col-sm-12">
             <div class="about-wrapper__image load-hidden">
               <img
-                alt="Profile Image"
                 class="img-fluid rounded shadow-lg"
-                height="auto"
-                width="300px"
-                src="assets/profile.jpg"
-                alt="Profile Image"
+                src="assets/profile.png"
+                alt="Portrait of Muhammad Fowad"
+                width="300"
+                height="388"
+                decoding="async"
               />
             </div>
           </div>
           <div class="col-md-6 col-sm-12">
             <div class="about-wrapper__info load-hidden">
               <p class="about-wrapper__info-text">
-                This is where you can describe about yourself. The more you
-                describe about yourself, the more chances you have!
-              </p>
+                I'm a student developer from Al Khobar, Saudi Arabia, passionate about AI, software development, and cybersecurity.
+
+I build web applications, experiment with AI, and turn ideas into real projects using Python, Flask, React, and TypeScript. My goal is to study AI and build technology that makes a difference.</p>
               <p class="about-wrapper__info-text">
-                Extra Information about you! like hobbies and your goals.
-              </p>
+Outside coding, I'm the founder of Build-a-thon, an online hackathon with 245 participants and over $19,500 in prizes and sponsorships. My goal is to study AI and build technology that makes a difference.              </p>
               <span class="d-flex mt-3">
                 <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn cta-btn--resume"
-                  href="assets/resume.pdf"
+                  class="cta-btn cta-btn--resume js-resume-trigger"
+                  href="mailto:hi@fowad.lol"
+                  aria-haspopup="dialog"
                 >
-                  View Resume
+                  Request Resume
                 </a>
               </span>
             </div>
@@ -106,41 +115,37 @@
     <section id="projects">
       <div class="container">
         <div class="project-wrapper">
-          <h2 class="section-title dark-blue-text">Projects</h2>
+          <h2 class="section-title dark-blue-text load-hidden">Projects</h2>
 
           <!-- Notice: each .row is a project -->
           <div class="row">
             <div class="col-lg-4 col-sm-12">
               <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Project Title 0</h3>
+                <h3 class="project-wrapper__text-title">Build-a-thon — Online Hackathon</h3>
                 <div>
                   <p class="mb-4">
-                    Describe the project being very specific, you can use the Twitter standard: no more than 280 characters: 
-                    complement the information: the skills learned or reinforced in its realization and how you faced it, 
-                    prove to be proactive in the search for solutions.
+                    Founded and organized an online hackathon for developers aged 13–22, bringing together 245 participants and securing $19,500+ in prizes and sponsorships. Led event planning, sponsor coordination, and community building.
                   </p>
                 </div>
                 <a
                   rel="noreferrer"
                   target="_blank"
                   class="cta-btn cta-btn--hero"
-                  href="#!"
+                  href="https://www.buildathon.dev"
                 >
                   See Live
                 </a>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  class="cta-btn text-color-main"
-                  href="#!"
-                >
-                  Source Code
-                </a>
+
               </div>
             </div>
             <div class="col-lg-8 col-sm-12">
               <div class="project-wrapper__image load-hidden">
-                <a rel="noreferrer" href="#!" target="_blank">
+                <a
+                  rel="noreferrer"
+                  href="https://www.buildathon.dev"
+                  target="_blank"
+                  aria-label="Open the Build-a-thon live site"
+                >
                   <div
                     data-tilt
                     data-tilt-max="4"
@@ -149,9 +154,13 @@
                     class="thumbnail rounded js-tilt"
                   >
                     <img
-                      alt="Project Image"
                       class="img-fluid"
-                      src="assets/project.jpg"
+                      src="assets/buildathon.png"
+                      alt="Build-a-thon hackathon landing page"
+                      width="1886"
+                      height="861"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 </a>
@@ -164,19 +173,16 @@
           <div class="row">
             <div class="col-lg-4 col-sm-12">
               <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Project Title 1</h3>
+                <h3 class="project-wrapper__text-title">Internet Archaeologist</h3>
                 <div>
-                  <p class="mb-4">
-                    Demonstrate in this description the skills of a programmer: such as having commitment, 
-                    having perseverance and accepting alternative solutions. Remember that being a portfolio you are not selling the project, 
-                    you are selling yourself, it reflects the resources used: Frameworks, libraries, platforms, etc.
+                  <p class="mb-4">Built an AI-powered web app that estimates the age of internet sites and ranks them based on their historical significance. Combined interactive visualizations with automated analysis to make exploring internet history more engaging.
                   </p>
                 </div>
                 <a
                   rel="noreferrer"
                   target="_blank"
                   class="cta-btn cta-btn--hero"
-                  href="#!"
+                  href="https://Archaeologist.fowad.lol/"
                 >
                   See Live
                 </a>
@@ -184,7 +190,7 @@
                   rel="noreferrer"
                   target="_blank"
                   class="cta-btn text-color-main"
-                  href="#!"
+                  href="https://github.com/cubecodefowad/internet-archaeologist"
                 >
                   Source Code
                 </a>
@@ -192,7 +198,12 @@
             </div>
             <div class="col-lg-8 col-sm-12">
               <div class="project-wrapper__image load-hidden">
-                <a rel="noreferrer" href="#!" target="_blank">
+                <a
+                  rel="noreferrer"
+                  href="https://Archaeologist.fowad.lol/"
+                  target="_blank"
+                  aria-label="Open the Internet Archaeologist live site"
+                >
                   <div
                     data-tilt
                     data-tilt-max="4"
@@ -201,9 +212,13 @@
                     class="thumbnail rounded js-tilt"
                   >
                     <img
-                      alt="Project Image"
                       class="img-fluid"
-                      src="assets/project.jpg"
+                      src="assets/archaeologist.png"
+                      alt="Internet Archaeologist project interface"
+                      width="1867"
+                      height="862"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 </a>
@@ -216,18 +231,18 @@
           <div class="row">
             <div class="col-lg-4 col-sm-12">
               <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Project Title 2</h3>
+                <h3 class="project-wrapper__text-title">MindMaze</h3>
                 <div>
                   <p class="mb-4">
-                    If the project was collaborative, reflect it in this description, that will demonstrate communication and/or leadership skills. 
-                    Additionally, if you made use of the mastery of a second language, it will reflect on you professionalism.
+Built a Flask-based riddle game where players solve brain-teasing questions to progress through levels. Combined Python and web development to create an interactive experience that makes learning and problem-solving fun.
+
                   </p>
                 </div>
                 <a
                   rel="noreferrer"
                   target="_blank"
                   class="cta-btn cta-btn--hero"
-                  href="#!"
+                  href="https://mindmaze.fowad.lol"
                 >
                   See Live
                 </a>
@@ -235,7 +250,7 @@
                   rel="noreferrer"
                   target="_blank"
                   class="cta-btn text-color-main"
-                  href="#!"
+                  href="https://github.com/cubecodefowad/MindMaze"
                 >
                   Source Code
                 </a>
@@ -243,7 +258,12 @@
             </div>
             <div class="col-lg-8 col-sm-12">
               <div class="project-wrapper__image load-hidden">
-                <a rel="noreferrer" href="#!" target="_blank">
+                <a
+                  rel="noreferrer"
+                  href="https://mindmaze.fowad.lol"
+                  target="_blank"
+                  aria-label="Open the MindMaze live site"
+                >
                   <div
                     data-tilt
                     data-tilt-max="4"
@@ -252,9 +272,13 @@
                     class="thumbnail rounded js-tilt"
                   >
                     <img
-                      alt="Project Image"
                       class="img-fluid"
-                      src="assets/project.jpg"
+                      src="assets/mindmaze.png"
+                      alt="MindMaze riddle game interface"
+                      width="1885"
+                      height="855"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 </a>
@@ -267,18 +291,127 @@
     </section>
     <!-- /END Projects Section -->
 
+    <!-- **** Certifications Section **** -->
+    <section id="certifications">
+      <div class="container">
+        <h2 class="section-title dark-blue-text load-hidden">Certifications</h2>
+        <div class="row cert-grid">
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="cert-card-wrap load-hidden">
+              <article class="cert-card">
+                <span class="cert-card__icon">
+                  <i class="fa fa-balance-scale" aria-hidden="true"></i>
+                </span>
+                <h3 class="cert-card__name">Introduction to Responsible AI</h3>
+                <p class="cert-card__meta">
+                  Google &middot;
+                  <time datetime="2025-07-14">July 2025</time>
+                </p>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cert-card__link"
+                  href="https://www.skills.google/public_profiles/9505f683-0cdd-471d-9c0e-5bb6fc4b2a18/badges/16948902"
+                >
+                  Verify credential
+                </a>
+              </article>
+            </div>
+          </div>
+          <!-- /END Certification -->
+
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="cert-card-wrap load-hidden">
+              <article class="cert-card">
+                <span class="cert-card__icon">
+                  <i class="fa fa-language" aria-hidden="true"></i>
+                </span>
+                <h3 class="cert-card__name">Introduction to Large Language Models</h3>
+                <p class="cert-card__meta">
+                  Google &middot;
+                  <time datetime="2025-07-14">July 2025</time>
+                </p>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cert-card__link"
+                  href="https://www.skills.google/public_profiles/9505f683-0cdd-471d-9c0e-5bb6fc4b2a18/badges/16948872"
+                >
+                  Verify credential
+                </a>
+              </article>
+            </div>
+          </div>
+          <!-- /END Certification -->
+
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="cert-card-wrap load-hidden">
+              <article class="cert-card">
+                <span class="cert-card__icon">
+                  <i class="fa fa-magic" aria-hidden="true"></i>
+                </span>
+                <h3 class="cert-card__name">Introduction to Generative AI</h3>
+                <p class="cert-card__meta">
+                  Google &middot;
+                  <time datetime="2025-07-14">July 2025</time>
+                </p>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cert-card__link"
+                  href="https://www.skills.google/public_profiles/9505f683-0cdd-471d-9c0e-5bb6fc4b2a18/badges/16948726"
+                >
+                  Verify credential
+                </a>
+              </article>
+            </div>
+          </div>
+          <!-- /END Certification -->
+
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="cert-card-wrap load-hidden">
+              <article class="cert-card">
+                <span class="cert-card__icon">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                </span>
+                <h3 class="cert-card__name">An introduction to software development: M813_1</h3>
+                <p class="cert-card__meta">
+                  The Open University &middot;
+                  <time datetime="2026-07-15">July 2026</time>
+                </p>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cert-card__link"
+                  href="https://www.open.edu/openlearn/science-maths-technology/an-introduction-software-development/content-section-0?active-tab=description-tab"
+                >
+                  View course
+                </a>
+              </article>
+            </div>
+          </div>
+          <!-- /END Certification -->
+        </div>
+      </div>
+    </section>
+    <!-- /END Certifications Section -->
+
+    
+
     <!-- **** Contact Section **** -->
     <section id="contact">
       <div class="container">
-        <h2 class="section-title">Contact</h2>
+        <h2 class="section-title load-hidden">Contact</h2>
         <div class="contact-wrapper load-hidden">
-          <p class="contact-wrapper__text">[Put your call to action here]</p>
+          <p class="contact-wrapper__text">Have an interesting project, a hackathon opportunity, or an idea involving AI and software? I'd love to connect, collaborate, and build something meaningful.
+
+</p>
           <a
             rel="noreferrer"
             target="_blank"
             class="cta-btn cta-btn--resume"
-            href="mailto:example@email.com"
-            >Call to Action</a
+            href="mailto:hi@fowad.lol"
+            >Email</a
           >
         </div>
       </div>
@@ -288,57 +421,49 @@
     <!-- **** Footer Section **** -->
     <footer class="footer navbar-static-bottom">
       <div class="container">
-        <a rel="noreferrer" href="#top" class="back-to-top">
+        <a rel="noreferrer" href="#top" class="back-to-top" aria-label="Back to top">
           <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
         </a>
         <div class="social-links">
-          <a rel="noreferrer" href="#!" target="_blank">
-            <i class="fa fa-twitter fa-inverse"></i>
-          </a>
-          <a rel="noreferrer" href="#!" target="_blank">
-            <i class="fa fa-linkedin fa-inverse"></i>
-          </a>
-          <a rel="noreferrer" href="#!" target="_blank">
-            <i class="fa fa-github fa-inverse"></i>
+          <a
+            rel="noreferrer"
+            href="https://github.com/cubecodefowad"
+            target="_blank"
+            aria-label="Muhammad Fowad on GitHub"
+          >
+            <i class="fa fa-github fa-inverse" aria-hidden="true"></i>
           </a>
         </div>
 
         <hr />
 
-        <!-- Notice: if you want to give me some credit, it will be huge for me! if not, put your data on it -->
-        <p class="footer__text">
-          © 2021 - Template developed by
-          <a rel="noreferrer" href="https://github.com/cobiwave" target="_blank"
-            >Jacobo Martínez</a
-          >
-        </p>
+        <p class="footer__text">© 2026 Muhammad Fowad</p>
 
-        <!-- TO DO: remove this entire paragraph once you finish your portfolio -->
-        <p class="mt-3 pt-3">
-          <a
-            rel="noreferrer"
-            class="github-button"
-            href="https://github.com/cobiwave/simplefolio/fork"
-            data-icon="octicon-repo-forked"
-            data-size="large"
-            data-show-count="true"
-            aria-label="Fork ntkme/github-buttons on GitHub"
-            >Fork</a
-          >
-          <a
-            rel="noreferrer" 
-            class="github-button"
-            href="https://github.com/cobiwave/simplefolio"
-            data-icon="octicon-star"
-            data-size="large"
-            data-show-count="true"
-            aria-label="Star cobiwave/simplefolio on GitHub"
-            >Star</a
-          >
-        </p>
+
       </div>
     </footer>
     <!-- /END Footer Section -->
+
+    <!-- **** Resume dialog **** -->
+    <dialog
+      id="resume-modal"
+      class="resume-modal"
+      aria-labelledby="resume-modal-title"
+    >
+      <h3 class="resume-modal__title" id="resume-modal-title">
+        Resume on request
+      </h3>
+      <p class="resume-modal__text">
+        I'd be glad to share it &mdash; email me and I'll send my resume over.
+      </p>
+      <form method="dialog" class="resume-modal__actions">
+        <a class="cta-btn cta-btn--hero" href="mailto:hi@fowad.lol">
+          Email hi@fowad.lol
+        </a>
+        <button type="submit" class="resume-modal__close">Close</button>
+      </form>
+    </dialog>
+    <!-- /END Resume dialog -->
 
     <script defer type="module" src="index.js"></script>
   </body>

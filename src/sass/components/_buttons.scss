@@ -1,48 +1,52 @@
+// The fill has to cover the button's border ring, not just its padding box.
+// It used to sit inside the border, so the ring stayed translucent white while
+// the label turned white and the button never looked uniformly filled.
+$cta-border: 2px;
+
 /* Call to Action Button */
 .cta-btn {
   display: inline-block;
   position: relative;
-  padding: 0.8rem $default-font-size;
-  font-weight: bold;
+  padding: 1.1rem 2.4rem;
+  font-weight: 700;
   line-height: 1;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-sm);
   z-index: 1;
-  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+  transition: color var(--dur-fast) var(--ease-smooth),
+    transform var(--dur-fast) var(--ease-smooth),
+    box-shadow var(--dur-fast) var(--ease-smooth);
 
   &::after {
     content: "";
     display: block;
     position: absolute;
+    top: -$cta-border;
+    bottom: -$cta-border;
+    left: -$cta-border;
     width: 0px;
-    height: 100%;
-    left: 0;
-    bottom: 0;
+    border-radius: var(--radius-sm);
     z-index: -1;
-    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+    transition: width var(--dur-med) var(--ease-smooth);
   }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  @include focus-ring($dark-blue-text);
 }
 
-/* Hero Style */
+/* Primary action. A layered background gives a rounded gradient border:
+   the white layer is clipped to the padding box, the gradient to the border. */
 .cta-btn--hero {
-  @include supportColorForIE11();
-  border-width: 2px;
-  border-style: solid;
-  -moz-border-image: -moz-linear-gradient(
-    135deg,
-    $primary-color 0%,
-    $secondary-color 100%
-  );
-  -webkit-border-image: -webkit-linear-gradient(
-    135deg,
-    $primary-color 0%,
-    $secondary-color 100%
-  );
-  border-image: linear-gradient(
-    135deg,
-    $primary-color 0%,
-    $secondary-color 100%
-  );
-  -webkit-border-image-slice: 1;
-  border-image-slice: 1;
+  color: $dark-blue-text;
+  border: $cta-border solid transparent;
+  background-image: linear-gradient($white-color, $white-color),
+    linear-gradient(135deg, $primary-color 0%, $band-end 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
   @include supportIE11() {
     color: $secondary-color !important;
     &:hover {
@@ -50,55 +54,46 @@
     }
   }
 
-  @include respond(phone) {
-    background-image: none;
-    border: 2px solid $secondary-color;
-    -webkit-text-fill-color: $secondary-color;
-  }
-
+  // Hover fill uses the same darker ramp as the section bands so the white
+  // hover text stays legible (4.9:1) across the whole sweep.
   &::after {
     background-image: linear-gradient(
       135deg,
       $primary-color 0%,
-      $secondary-color 100%
+      $band-end 100%
     );
-
-    @include respond(phone) {
-      background-image: none;
-    }
   }
 
   &:hover {
-    -webkit-text-fill-color: $white-color;
+    color: $white-color;
     text-decoration: none;
 
-    @include respond(phone) {
-      -webkit-text-fill-color: $secondary-color;
-    }
-
     &::after {
-      width: 100%;
+      // Spans the overhang on both sides, so the ring is filled too.
+      width: calc(100% + #{$cta-border * 2});
     }
   }
 }
 
-/* Resume Style */
+/* Resume / email action, used on the gradient bands */
 .cta-btn--resume {
   color: $white-color;
-  border: 2px solid $white-color;
+  border: $cta-border solid rgba($white-color, 0.85);
 
   &::after {
     background: $white-color;
   }
 
   &:hover {
-    color: $secondary-color;
+    color: $primary-color;
     text-decoration: none;
 
     &::after {
-      width: 100%;
+      width: calc(100% + #{$cta-border * 2});
     }
   }
+
+  @include focus-ring($white-color);
 }
 
 /* Arrow Button */

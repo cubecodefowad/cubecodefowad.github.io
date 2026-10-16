@@ -1,26 +1,27 @@
 .footer {
   background-color: $dark-grey;
   color: $white-color;
-  padding: 4.8rem 0;
+  padding: 5.6rem 0 4.8rem;
 
   @include respond(phone) {
     border: 0px;
   }
 
   &__text {
-    color: darken($white-color, 50%);
-    font-size: 1.3rem;
+    color: darken($white-color, 30%);
+    font-size: var(--fs-sm);
+    margin: 2.4rem 0 0;
 
     a {
-      color: darken($white-color, 50%);
-      font-size: 1.3rem;
-      transition: all 0.4s;
+      color: darken($white-color, 30%);
+      font-size: var(--fs-sm);
+      transition: color var(--dur-fast) var(--ease-smooth);
       display: inline-block;
       background-color: $dark-grey;
 
       &:hover,
       &:active {
-        color: $primary-color;
+        color: $white-color;
         -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
         box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
       }
@@ -28,10 +29,11 @@
   }
 
   & hr {
-    margin: 1rem auto;
+    margin: 2.4rem auto;
     border: 0;
     width: 50%;
-    border-top: 2px solid grey;
+    max-width: 32rem;
+    border-top: 1px solid rgba($white-color, 0.18);
   }
 }
 
@@ -45,22 +47,27 @@
     flex-direction: column;
     justify-content: center;
     color: $white-color;
-    font-size: 3rem;
-    width: 5rem;
-    height: 5rem;
-    margin: $default-font-size $default-font-size;
-    transition: all 0.2s ease-in;
+    font-size: 2.6rem;
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 50%;
+    margin: 1.6rem;
+    transition: transform var(--dur-fast) var(--ease-smooth),
+      color var(--dur-fast) var(--ease-smooth);
 
     &:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      color: $secondary-color;
     }
+
+    @include focus-ring($white-color);
   }
 }
 
 .back-to-top i {
   color: $white-color;
   margin: 1rem 0 $default-font-size;
-  transition: all 0.2s ease-in;
+  transition: transform var(--dur-fast) var(--ease-smooth);
 
   &:hover {
     transform: translateY(-2px);

@@ -1,5 +1,7 @@
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 
   &.sr .load-hidden {
     visibility: hidden;
@@ -10,6 +12,14 @@ body {
   font-family: "Montserrat", sans-serif;
   text-align: center;
   scroll-behavior: smooth;
+  background-color: $white-color;
+  color: $dark-blue-text;
+  line-height: var(--lh-body);
+}
+
+::selection {
+  background: rgba($primary-color, 0.18);
+  color: $dark-blue-text;
 }
 
 /* Scrollbar */
@@ -25,4 +35,26 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: $primary-color;
+}
+
+// Respect the OS "reduce motion" setting: reveal content immediately and
+// stop scrolling/transition animations instead of playing them.
+@media (prefers-reduced-motion: reduce) {
+  html.sr .load-hidden {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html,
+  body {
+    scroll-behavior: auto !important;
+  }
 }

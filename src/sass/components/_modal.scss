@@ -1,0 +1,80 @@
+/* Resume-on-request dialog. <dialog> gives the focus trap, Esc handling and
+   the dimmed backdrop for free, so only the appearance is set here. */
+.resume-modal {
+  width: min(46rem, calc(100vw - 3.2rem));
+  padding: 3.6rem 3.2rem 3.2rem;
+  border: 0;
+  border-radius: var(--radius-md);
+  background-color: $white-color;
+  color: $dark-blue-text;
+  text-align: center;
+  box-shadow: var(--shadow-lift);
+  animation: resume-modal-in var(--dur-med) var(--ease-smooth);
+
+  &::backdrop {
+    background-color: rgba($dark-blue-text, 0.55);
+    animation: resume-modal-backdrop var(--dur-fast) var(--ease-smooth);
+  }
+
+  &__title {
+    margin-bottom: 1.2rem;
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: var(--tracking-tight);
+  }
+
+  // #5a5a61 holds 6.7:1 on the dialog surface.
+  &__text {
+    margin-bottom: 2.8rem;
+    color: $primary-color;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__close {
+    padding: 1.1rem 1.4rem;
+    font-family: inherit;
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $primary-color;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    transition: color var(--dur-fast) var(--ease-smooth);
+
+    &:hover {
+      color: $dark-blue-text;
+    }
+
+    @include focus-ring($primary-color);
+  }
+}
+
+@keyframes resume-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.2rem) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes resume-modal-backdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

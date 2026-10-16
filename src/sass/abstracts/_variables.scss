@@ -1,13 +1,69 @@
-// COLORS
-$primary-color: #02aab0;
-$secondary-color: #00cdac;
+// ---------------------------------------------------------------------------
+// Design tokens. Raw values live here as custom properties so the palette,
+// type scale, spacing rhythm and motion can be tuned in one place. The Sass
+// variables below keep every existing partial working unchanged.
+// ---------------------------------------------------------------------------
+:root {
+  // Colours are not duplicated as custom properties here: the Sass palette
+  // below is the single source, and the ramps that must stay legible are built
+  // from $band-end / $accent-text inside the partials.
 
-$white-color: #fff;
+  // Fluid type scale
+  --fs-sm: 1.3rem;
+  --fs-body: 1.6rem;
+  --fs-lede: 1.8rem;
+  --fs-h3: 2.2rem;
+  --fs-h2: clamp(2.6rem, 3.4vw, 4rem);
+  --fs-display: clamp(3.2rem, 5.4vw, 5.6rem);
+  --lh-tight: 1.12;
+  --lh-body: 1.7;
+  --tracking-tight: -0.02em;
+
+  // Shape
+  --radius-sm: 0.6rem;
+  --radius-md: 1.2rem;
+
+  // Bootstrap's .rounded utility applies border-radius with !important, so the
+  // portrait and project cards must be pointed at the design tokens here.
+  --bs-border-radius: var(--radius-md);
+  --bs-border-radius-sm: var(--radius-sm);
+
+  // Tighter radii on small screens. Bootstrap renders .rounded from this
+  // token with !important, so it must be re-pointed here rather than in the
+  // card rules (which the utility would otherwise win against).
+  @media (max-width: 37.5em) {
+    --bs-border-radius: var(--radius-sm);
+  }
+
+  // Elevation
+  --shadow-soft: 0 1px 2px rgba(39, 35, 65, 0.06),
+    0 8px 24px -10px rgba(39, 35, 65, 0.22);
+  --shadow-lift: 0 2px 4px rgba(39, 35, 65, 0.08),
+    0 22px 48px -16px rgba(39, 35, 65, 0.32);
+
+  // Motion
+  --ease-smooth: cubic-bezier(0.19, 1, 0.22, 1);
+  --dur-fast: 0.25s;
+  --dur-med: 0.45s;
+}
+
+// COLORS
+$primary-color: #5a5a61;
+$secondary-color: #9fa7a7;
+
+$white-color: #fafcfc;
 
 $dark-grey: #333333;
 $light-grey: #d2d2d2;
 
 $dark-blue-text: #272341; // For Headings
+
+// Darker end stop for the large gradient bands. The brand light end (#9fa7a7)
+// leaves white body copy at only 2.4:1, so bands use this instead (4.9:1).
+$band-end: #697070;
+
+// Text-safe end stop for gradient text (see --gradient-text).
+$accent-text: #6d7a7a;
 
 // FONT SIZE
 $default-font-size: 1.6rem;

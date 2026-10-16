@@ -3,7 +3,7 @@
   background-image: linear-gradient(
     135deg,
     $primary-color 0%,
-    $secondary-color 100%
+    $band-end 100%
   );
   color: $white-color;
   height: 100%;
@@ -16,6 +16,7 @@
     height: 100%;
     -webkit-clip-path: none;
     clip-path: none;
+    padding-bottom: 5rem;
   }
 
   .about-wrapper {
@@ -28,6 +29,14 @@
       height: 100%;
       align-items: center;
       justify-content: center;
+
+      img {
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-lift);
+        // faint ring so the portrait separates from the gradient band
+        outline: 1px solid rgba($white-color, 0.18);
+        outline-offset: -1px;
+      }
 
       @include respond(tab-land) {
         height: 100%;
@@ -49,6 +58,8 @@
 
       &-text {
         text-align: left;
+        line-height: var(--lh-body);
+        margin-bottom: 1.6rem;
 
         @include respond(tab-port) {
           text-align: left;

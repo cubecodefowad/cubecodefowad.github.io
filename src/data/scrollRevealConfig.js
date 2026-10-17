@@ -66,6 +66,13 @@ export const targetElements = [
     },
   },
   {
+    element: ".endorsement-card",
+    animation: {
+      delay: 80,
+      origin: "bottom",
+    },
+  },
+  {
     element: ".contact-wrapper",
     animation: {
       delay: 100,

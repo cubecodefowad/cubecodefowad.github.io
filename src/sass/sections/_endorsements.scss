@@ -1,0 +1,120 @@
+#endorsements {
+  // Continues the tinted band the certifications section ends on, so the two
+  // read as one surface. The contact section below overlaps by 10rem and cuts
+  // 12vh diagonally, so the bottom padding has to clear both.
+  background-color: #eef2f2;
+  color: $dark-blue-text;
+  padding: 0 0 16rem;
+
+  @include respond(tab-land) {
+    padding: 0 0 8rem;
+  }
+
+  @include respond(phone) {
+    padding: 0 0 6rem;
+  }
+}
+
+// One testimonial, so the card is the layout: no grid, just a readable column.
+.endorsement-card {
+  position: relative;
+  margin: 0;
+  padding: 4.4rem 4rem 3.2rem;
+  text-align: left;
+  background-color: $white-color;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+
+  // Same gradient hairline as the certification cards.
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.3rem;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    background-image: linear-gradient(90deg, $primary-color 0%, $band-end 100%);
+  }
+
+  @include respond(phone) {
+    padding: 3.2rem 2.4rem 2.4rem;
+  }
+
+  &__mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.8rem;
+    height: 4.8rem;
+    margin-bottom: 2.4rem;
+    font-size: 1.8rem;
+    line-height: 1;
+    color: $white-color;
+    background-image: linear-gradient(135deg, $primary-color 0%, $band-end 100%);
+    border-radius: 50%;
+    box-shadow: var(--shadow-soft);
+  }
+
+  // Slightly larger than body copy: this is the point of the section, and the
+  // #272341 on white holds 14.6:1.
+  &__quote {
+    margin: 0 0 3.2rem;
+    font-size: var(--fs-lede);
+    line-height: 1.75;
+    color: $dark-blue-text;
+
+    p {
+      margin: 0;
+    }
+
+    @include respond(phone) {
+      font-size: var(--fs-body);
+    }
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid rgba($dark-blue-text, 0.12);
+  }
+
+  // Initials stand in for a portrait we do not have, styled like the
+  // certification icons so the two sections match.
+  &__monogram {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.2rem;
+    height: 5.2rem;
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: $dark-blue-text;
+    background-color: rgba($primary-color, 0.14);
+    border-radius: 50%;
+  }
+
+  &__identity {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  &__name {
+    font-size: var(--fs-body);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  &__role {
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $primary-color;
+  }
+}

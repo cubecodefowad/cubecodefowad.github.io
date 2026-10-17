@@ -9,11 +9,12 @@
   );
   color: $dark-blue-text;
   // The projects wrapper already runs out 12rem, so the heading only needs a
-  // little extra breathing room.
-  padding: 2rem 0 14rem;
+  // little extra breathing room. The endorsements section that follows owns the
+  // space the contact section's overlap needs, so the bottom padding is small.
+  padding: 2rem 0 10rem;
 
   @include respond(tab-land) {
-    padding: 1rem 0 8rem;
+    padding: 1rem 0 6rem;
   }
 
   @include respond(phone) {

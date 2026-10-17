@@ -1,0 +1,46 @@
+// ---------------------------------------------------------------------------
+// Copy protection. This is a deterrent, not a guarantee: anything a browser can
+// render can still be viewed in the page source, saved from devtools, fetched
+// with curl, or screenshotted. What this removes is the everyday routes —
+// selecting, copying, the context menu, and dragging images out of the page.
+//
+// Form controls are deliberately left selectable so the guard can never be the
+// reason a future input stops accepting text or paste.
+// ---------------------------------------------------------------------------
+
+html,
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  // iOS: suppress the long-press callout on text and images.
+  -webkit-touch-callout: none;
+}
+
+// The UA stylesheet sets `user-select: text` on <dialog>, so the resume popup
+// would otherwise stay selectable inside the top layer. Re-apply the guard.
+dialog {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+// Images cannot be dragged onto the desktop or into another window.
+img,
+picture {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+// Escape hatch: typing, selecting and pasting inside a field keep working.
+input,
+textarea,
+select,
+[contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}

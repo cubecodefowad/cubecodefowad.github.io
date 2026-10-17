@@ -1,6 +1,7 @@
 import initScrollReveal from "./scripts/scrollReveal";
 import initTiltEffect from "./scripts/tiltAnimation";
 import initResumeDialog from "./scripts/resumeDialog";
+import initCopyGuard from "./scripts/copyGuard";
 import { targetElements, defaultProps } from "./data/scrollRevealConfig";
 
 // ScrollReveal is loaded from a CDN in index.html. If that request fails the
@@ -14,3 +15,4 @@ if (typeof ScrollReveal === "undefined") {
 
 initTiltEffect();
 initResumeDialog();
+initCopyGuard();
